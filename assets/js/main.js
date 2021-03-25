@@ -18,17 +18,45 @@ var app = new Vue({
             {
                 title: 'Hello World 4',
                 status: 'todo'
+            },
+            {
+                title: 'Hello World 1',
+                status: 'todo'
+            },
+            {
+                title: 'Hello World 2',
+                status: 'todo'
+            },
+            {
+                title: 'Hello World 3',
+                status: 'todo'
+            },
+            {
+                title: 'Hello World 4',
+                status: 'todo'
+            },
+            {
+                title: 'Hello World 1',
+                status: 'todo'
+            },
+            {
+                title: 'Hello World 2',
+                status: 'todo'
             }
+            
         ]
     }, 
     computed:{
         todosCompute: function(){
+            
             let done = this.todos.filter((todo)=> todo.status == 'done');
             let todo = this.todos.filter((todo)=> todo.status == 'todo');
 
             return [...todo, ...done]
-        }
+        },
+        
     },
+    
     methods:{
         add: function(){
             if(this.inputUser != ''){
@@ -54,6 +82,9 @@ var app = new Vue({
             
             this.inputUser = todo.title
             this.todos.splice(i, 1)
-        }
+        },
+
     }
 })
+
+console.log(new Date())
