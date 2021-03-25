@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue-Todo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="./assets/css/master.css">
+</head>
+<body>
+    <div id="root">
+        <ul>
+            <li v-for='(todo, i) in todosCompute'>
+                <span class="todo-txt" >{{todo.title}}</span>
+                <span v-if="todo.status != 'done'"><i class="fas fa-edit" @click='txt(todo, i)'></i><i class="fas fa-check" @click='doneCheck(todo)'></i></span>
+                <span v-if="todo.status == 'done'" @click= 'remove(todo)'><i class="fas fa-trash" ></i></span>
+            </li>
+        </ul>
+
+        <input v-model = 'inputUser' type="text" @keyup.enter= 'add'>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
